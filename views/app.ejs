@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <a href="http://localhost:3000">Go back</a>
+    <div class="container">
+      <fieldset>
+        <form action="/app/<%=name%>" method="post">
+          <input name="pokemon" type="text" class="ghost-input" placeholder="Enter a Pokemon name" required>
+          <input type="submit" class="ghost-button" value="Get Data">
+        </form>
+        <% if(data !== null){ %>
+          <img src=<%= imgurl %> alt="Pokemon">
+          <h2> Summary </h2>
+          <p><%= data %></p>
+          <h2> Specifics </h2>
+          <p><%= other %></p>
+        <% } %>
+
+        <% if(error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
+      </fieldset>
+    </div>
+
+  </body>
+</html>
